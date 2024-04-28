@@ -6,8 +6,7 @@ const axiosURL = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
 
 function App() {
   const [apod, setApod] = useState()
-  console.log("hello!"
-)
+  
   useEffect(() => {
     function fetchPhoto() {
       axios.get(axiosURL)
@@ -33,7 +32,15 @@ function App() {
     }, [])
   
   return (
-    apod && <Card title={apod.title} text={apod.explanation} importURL={apod.url} date={apod.date} />
+    apod && 
+    <section>
+      <Card 
+        title={apod.title} 
+        text={apod.explanation} 
+        importURL={apod.url} 
+        date={apod.date} 
+      />
+    </section>
   )
 }
 
